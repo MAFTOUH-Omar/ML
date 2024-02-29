@@ -43,3 +43,16 @@ plt.xlabel('Nombre d\'itérations')
 plt.ylabel('Fonction Coût')
 plt.title('Descente de Gradient')
 plt.show()
+
+def calcul_perfformence ( Ypred , Y ) :
+    n = len(Y)
+    A = 0
+    B = 0
+    for i in range(n) :
+        A += (Ypred[i] - Y[i] ) ** 2
+        B += (Ypred[i] - np.mean(Y) ) ** 2
+    r = 1 - A/B
+    return r
+
+# coef_det = calcul_perfformence(prediction , y)
+# print(f"La perfremence de votre model de regression liniaire est : {coef_det}")
